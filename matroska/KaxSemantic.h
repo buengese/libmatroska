@@ -197,13 +197,19 @@ public:
 };
 
 DECLARE_MKX_MASTER(KaxReferenceFrame)
+public:
+  filepos_t RenderData(IOCallback & output, bool bForceRender, bool bSaveDefault);
 };
 
 
 DECLARE_MKX_UINTEGER(KaxReferenceOffset)
+public:
+  filepos_t RenderData(IOCallback & output, bool bForceRender, bool bSaveDefault);
 };
 
 DECLARE_MKX_UINTEGER(KaxReferenceTimeCode)
+public:
+  filepos_t RenderData(IOCallback & output, bool bForceRender, bool bSaveDefault);
 };
 
 DECLARE_MKX_BINARY (KaxEncryptedBlock)
@@ -547,21 +553,29 @@ DECLARE_MKX_UINTEGER(KaxTrackJoinUID)
 };
 
 DECLARE_MKX_UINTEGER(KaxTrickTrackUID)
+public:
+  filepos_t RenderData(IOCallback & output, bool bForceRender, bool bSaveDefault);
 };
 
 DECLARE_MKX_BINARY (KaxTrickTrackSegmentUID)
 public:
+  filepos_t RenderData(IOCallback & output, bool bForceRender, bool bSaveDefault);
   virtual bool ValidateSize() const {return IsFiniteSize() && GetSize() == 16;}
 };
 
 DECLARE_MKX_UINTEGER(KaxTrickTrackFlag)
+public:
+  filepos_t RenderData(IOCallback & output, bool bForceRender, bool bSaveDefault);
 };
 
 DECLARE_MKX_UINTEGER(KaxTrickMasterTrackUID)
+public:
+  filepos_t RenderData(IOCallback & output, bool bForceRender, bool bSaveDefault);
 };
 
 DECLARE_MKX_BINARY (KaxTrickMasterTrackSegmentUID)
 public:
+  filepos_t RenderData(IOCallback & output, bool bForceRender, bool bSaveDefault);
   virtual bool ValidateSize() const {return IsFiniteSize() && GetSize() == 16;}
 };
 
